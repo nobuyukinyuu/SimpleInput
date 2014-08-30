@@ -13,7 +13,7 @@ End Function
 Class Game Extends App
 	'Erroneous analog stick values can happen rarely on glfw for some controllers and create phantom triggers.  
 	'If so, this example lets you disable analog binds. 
-	Const DISABLE_ANALOG_DETECTION:Bool
+	Const DISABLE_ANALOG_DETECTION:Bool = False
 
 	Field Control:InputController     'The Controller contains all of our virtual buttons and their binds.
 	Field btns:= New Stack<DrawBtn>   'The UI buttons associated with buttons in our InputController.
@@ -24,8 +24,6 @@ Class Game Extends App
 	Field Detecting:Bool              'are we polling for a bind?
 	
 	Field BindThreshold:Float = 0.75  'We use this when detecting binds, and set it to a value >1 when analog's disabled.
-	
-	Field crap = 2
 	
 	Method OnCreate()
 		SetUpdateRate 60
@@ -174,7 +172,7 @@ Class Game Extends App
 	End Method
 End Class
 
-
+'Summary:  Represents a UI button in our example, and also serves as a way to poll a specific attached button.
 Class DrawBtn
 	Field x:Float, y:Float, r:Float = 18
 	Field drawTri:Bool
