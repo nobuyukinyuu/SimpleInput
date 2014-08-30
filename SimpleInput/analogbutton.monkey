@@ -70,8 +70,8 @@ Class AnalogAxisButton Extends ControllerButton
 	Const LT4 = $10060 + 9
 	Const RT4 = $10060 + 10
 
-
-	Field Threshold:Float = 0.75  'How far does the stick have to move from center to fire off?
+	'How far does the stick have to move from center to trigger normally? (This is different than bind detection threshold)
+	Field Threshold:Float = 0.75
 	
 	
 	'Summary:  Creates a new AnalogAxisButton with the associated code defaults.
@@ -165,7 +165,7 @@ Class AnalogAxisButton Extends ControllerButton
 			Case RT3
 				If JoyZ(0, 2) <= - Threshold Then btnsHeldDown += 1
 				
-			'Player 3
+			'Player 4
 			Case LS_DOWN4
 				If JoyY(0, 3) <= - Threshold Then btnsHeldDown += 1
 			Case LS_UP4
@@ -215,7 +215,7 @@ Class AnalogAxisButton Extends ControllerButton
 		End If
 	End Method
 	
-	'Summary:  Returns a const > 65536 if a stick exceeds threshold, else performs normal ControllerButton detection. 
+	'Summary:  Returns a const > 65536 if a stick exceeds Threshold, else performs normal ControllerButton detection. 
 	Function Detect:Int(Threshold:Float = 0.75)
 		
 		For Local player:Int = 0 To 3
