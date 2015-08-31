@@ -2,7 +2,7 @@ Import InputControllers
 
 'Summary:  Represents the state of a single digital button.
 Class ControllerButton
-  'Private  'TODO: Protected
+  Protected
 	Field _Holding:Bool   'Checks Holding consistency over frames for Up event.
   Public
 	Field codes:= New IntSet  'keycodes for the button

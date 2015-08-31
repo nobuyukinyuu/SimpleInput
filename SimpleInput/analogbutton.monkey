@@ -71,15 +71,17 @@ Class AnalogAxisButton Extends ControllerButton
 	Const RT4 = $10060 + 10
 
 	'How far does the stick have to move from center to trigger normally? (This is different than bind detection threshold)
-	Field Threshold:Float = 0.75
+	Field Threshold:Float = 0.5
 	
 	
 	'Summary:  Creates a new AnalogAxisButton with the associated code defaults.
-	Method New(code:Int)
+	Method New(code:Int, threshold:Float = -1)
+		If threshold >= 0 Then Threshold = threshold
 		Bind(code, True)
 		Reset()
 	End Method
-	Method New(code:Int[])  'Push multiple codes
+	Method New(code:Int[], threshold:Float = -1)  'Push multiple codes
+		If threshold >= 0 Then Threshold = threshold
 		Bind(code, True)
 		Reset()
 	End Method

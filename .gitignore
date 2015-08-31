@@ -18,3 +18,6 @@ debug.log
 
 # Ignore asset folder
 assets
+
+#Ignore builder output
+/bind-builder/bind_mappings.monkey
