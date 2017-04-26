@@ -4,7 +4,7 @@ SimpleInput
 An extendible class for handling input device keybinds in MonkeyX.
 
 -----
-##License
+## License
 
 https://github.com/nobuyukinyuu/SimpleInput/blob/master/LICENSE.md
 
